@@ -10,10 +10,10 @@ package longestpalindromic;
  */
 public class LongestPalindromic {
 
-    public static void findLongestPalindromicString(String text) {
+    public static String findLongestPalindromicString(String text) {
         int N = text.length();
         if (N == 0) {
-            return;
+            return "";
         }
         N = 2 * N + 1;
         int[] L = new int[N];
@@ -36,15 +36,12 @@ public class LongestPalindromic {
             if (diff >= 0) {
                 if (L[iMirror] < diff) {
                     L[i] = L[iMirror];
-                }
-                else if (L[iMirror] == diff && R == N - 1) {
+                } else if (L[iMirror] == diff && R == N - 1) {
                     L[i] = L[iMirror];
-                }
-                else if (L[iMirror] == diff && R < N - 1) {
+                } else if (L[iMirror] == diff && R < N - 1) {
                     L[i] = L[iMirror];
                     expand = 1;
-                }
-                else if (L[iMirror] > diff) {
+                } else if (L[iMirror] > diff) {
                     L[i] = diff;
                     expand = 1;
                 }
@@ -76,32 +73,32 @@ public class LongestPalindromic {
         }
         start = (maxLPSCenterPosition - maxLPSLength) / 2;
         end = start + maxLPSLength - 1;
-        System.out.print("LPS of string is " + text + " : ");
+        String result = "";
         for (i = start; i <= end; i++) {
-            System.out.print(text.charAt(i));
+            result = result + text.charAt(i);
         }
-        System.out.println();
+        return result;
     }
 
     public static void main(String[] args) {
         String text1 = "babcbabcbaccba";
-        findLongestPalindromicString(text1);
+        System.out.println( findLongestPalindromicString(text1));
         String text2 = "abaaba";
-        findLongestPalindromicString(text2);
-        String text3 = "abababa";
-        findLongestPalindromicString(text3);
-        String text4 = "abcbabcbabcba";
-        findLongestPalindromicString(text4);
-        String text5 = "forgeeksskeegfor";
-        findLongestPalindromicString(text5);
-        String text6 = "caba";
-        findLongestPalindromicString(text6);
-        String text7 = "abacdfgdcaba";
-        findLongestPalindromicString(text7);
-        String text8 = "abacdfgdcabba";
-        findLongestPalindromicString(text8);
-        String text9 = "abacdedcaba";
-        findLongestPalindromicString(text9);
+        System.out.println( findLongestPalindromicString(text2));
+//        String text3 = "abababa";
+//        findLongestPalindromicString(text3);
+//        String text4 = "abcbabcbabcba";
+//        findLongestPalindromicString(text4);
+//        String text5 = "forgeeksskeegfor";
+//        findLongestPalindromicString(text5);
+//        String text6 = "caba";
+//        findLongestPalindromicString(text6);
+//        String text7 = "abacdfgdcaba";
+//        findLongestPalindromicString(text7);
+//        String text8 = "abacdfgdcabba";
+//        findLongestPalindromicString(text8);
+//        String text9 = "abacdedcaba";
+//        findLongestPalindromicString(text9);
     }
 
 }
