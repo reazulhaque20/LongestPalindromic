@@ -82,23 +82,26 @@ public class LongestPalindromic {
 
     public static void main(String[] args) {
         String text1 = "babcbabcbaccba";
-        System.out.println( findLongestPalindromicString(text1));
+//        System.out.println( findLongestPalindromicString(text1));
         String text2 = "abaaba";
-        System.out.println( findLongestPalindromicString(text2));
-//        String text3 = "abababa";
+//        System.out.println( findLongestPalindromicString(text2));
+        String text3 = "abababa";
 //        findLongestPalindromicString(text3);
-//        String text4 = "abcbabcbabcba";
+        String text4 = "abcbabcbabcba";
 //        findLongestPalindromicString(text4);
-//        String text5 = "forgeeksskeegfor";
+        String text5 = "forgeeksskeegfor";
 //        findLongestPalindromicString(text5);
-//        String text6 = "caba";
+        String text6 = "caba";
 //        findLongestPalindromicString(text6);
-//        String text7 = "abacdfgdcaba";
+        String text7 = "abacdfgdcaba";
 //        findLongestPalindromicString(text7);
-//        String text8 = "abacdfgdcabba";
+        String text8 = "abacdfgdcabba";
 //        findLongestPalindromicString(text8);
-//        String text9 = "abacdedcaba";
+        String text9 = "abacdedcaba";
 //        findLongestPalindromicString(text9);
+
+          Solution s = new Solution();
+          System.out.println(s.longestPalindrome(text6));
     }
 
 }
